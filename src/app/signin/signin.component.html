@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>Bienvenidos!</h1>
+      <h1>Crear profesor</h1>
     </div>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
@@ -13,7 +13,7 @@
             <a class="nav-link active" [routerLink]="['/signin']">Crear</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Mostrar</a>
+            <a class="nav-link active" [routerLink]="['/mostrar']">Mostrar</a>
           </li>
           
         </ul>
@@ -33,7 +33,7 @@
     <br />
     <br />
   </div>
-  <form (ngSubmit)="crear()" id="crear">
+  <form id="crear">
     <div class="row">
       <div class="col-md-12">
         <input

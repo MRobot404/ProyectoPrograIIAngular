@@ -10,7 +10,7 @@
   <div class="row" *ngIf="loading">
     <div class="col-md-12">
       <div class="spinner-border text-info float-right" role="status">
-        <span class="sr-only">Loading ...</span>
+        <span class="sr-only"></span>
       </div>
     </div>
     <br />
@@ -21,6 +21,7 @@
       <div class="col-md-12">
         <input
           type="text"
+          id="usuario"
           [(ngModel)]="profesor.usuario"
           [ngModelOptions]="{ standalone: true }"
           placeholder="Usuario"
@@ -33,7 +34,8 @@
     <div class="row">
         <div class="col-md-12">
           <input
-            type="text"
+            type="password"
+            id="contra"
             [(ngModel)]="profesor.contrasena"
             [ngModelOptions]="{ standalone: true }"
             placeholder="Contraseña"
@@ -45,7 +47,7 @@
         <br>
         <div class="row">
         <div class="col-md-12">
-            <input class="btn btn-success float-right" type="submit" value="Ingresar">
+            <input class="btn btn-success float-right" type="submit" value="Ingresar" >
         </div>
         </div>
   </form>

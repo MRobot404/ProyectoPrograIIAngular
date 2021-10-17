@@ -18,6 +18,10 @@ profesor:any={}
     }
   }
 
+  logout(){
+ localStorage.removeItem("profesor");
+ location.href="/";
+  }
   
 }
 export class GridListOverviewExample {}

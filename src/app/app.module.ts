@@ -12,12 +12,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { SigninComponent } from './signin/signin.component';
+import { MostrarComponent } from './mostrar/mostrar.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    SigninComponent
+    SigninComponent,
+    MostrarComponent
   ],
   imports: [
     BrowserModule,

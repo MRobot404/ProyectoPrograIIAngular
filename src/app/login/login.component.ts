@@ -3,6 +3,7 @@ import {
   HttpHeaderResponse,
   HttpHeaders,
 } from '@angular/common/http';
+import { parseSelectorToR3Selector } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import {catchError}from 'rxjs/operators';
 
@@ -15,47 +16,32 @@ export class LoginComponent implements OnInit {
   errorInicio: boolean = false;
   loading: boolean = false;
   profesor: any = {};
+  usuario:any ;
+  
+
+  resultado2:any;
   constructor(private http: HttpClient) {}
   ngOnInit(): void {}
   login() {
-    let formulario: any = document.getElementById('login');
-    let formularioValido: boolean = formulario.reportValidity();
-    if (formularioValido) {
-      this.loading = true;
-      this.loginService().subscribe(
-        data  => this.iniciarSesion(data)
-      )
-    }
-  }
-  iniciarSesion(resultado: any) {
+   var resultado=(<HTMLInputElement>document.getElementById("usuario")).value;
+   var resultado2=(<HTMLInputElement>document.getElementById("contra")).value;
     this.loading = false;
     console.log(resultado)
-    
-    if (resultado.length>0) {
-
-      localStorage.setItem('profesor', JSON.stringify(resultado));
-      location.href = '/home';
-      
+    console.log(resultado2)
+    if (resultado.includes("ADMIN") && resultado2.includes("ADMIN")) {
+  this.loading=true;
+    location.href = '/home';    
     } else {
       this.errorInicio=true;
     }
+   
+  }
+  iniciarSesion(resultado: any) {
+ 
   
   }
 
-  loginService() {
-    var httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    return this.http.post<any>(
-      'http://localhost:3030/profesor/login',
-      this.profesor,
-      httpOptions
-    ).pipe(
-      catchError(e => "Error")
-    );
-  }
 
  
+
 }
