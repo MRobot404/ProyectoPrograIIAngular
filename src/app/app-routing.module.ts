@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import {MostrarComponent} from './mostrar/mostrar.component';
 
+
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'home',component:HomeComponent},

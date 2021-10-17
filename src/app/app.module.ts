@@ -13,6 +13,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { SigninComponent } from './signin/signin.component';
 import { MostrarComponent } from './mostrar/mostrar.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { MostrarComponent } from './mostrar/mostrar.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatPaginatorModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

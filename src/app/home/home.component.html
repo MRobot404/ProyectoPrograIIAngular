@@ -9,13 +9,37 @@
         <div class="container-fluid">
           <ul class="navbar-nav">
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link active" [routerLink]="['/home']">Home</a>
+              <a class="nav-link active" [routerLink]="['/home']">Inicio</a>
             </li>
-           <li class="nav-item"routerLinkActive="active" >
-              <a class="nav-link active" [routerLink]="['/signin']">Crear</a>
+            <li ngbDropdown  class="nav-item dropdown">
+              <a ngbDropdownToggle class="nav-link dropdown-toggle active"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Profesor
+              </a>
+              <div  ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                <li><a ngbDropdownItem  class="dropdown-item" [routerLink]="['/signin']">Crear</a></li>
+                <li><a ngbDropdownItem class="dropdown-item" [routerLink]="['/mostrar']">Mostrar</a></li>
+                <li><a  ngbDropdownItem class="dropdown-item" href="#">Eliminar</a></li>
+              </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" [routerLink]="['/mostrar']">Mostrar</a>
+            <li ngbDropdown  class="nav-item dropdown">
+              <a ngbDropdownToggle class="nav-link dropdown-toggle active"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Alumno
+              </a>
+              <div  ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                <li><a ngbDropdownItem  class="dropdown-item" [routerLink]="['/signin']">Crear</a></li>
+                <li><a ngbDropdownItem class="dropdown-item" [routerLink]="['/mostrar']">Mostrar</a></li>
+                <li><a  ngbDropdownItem class="dropdown-item" href="#">Eliminar</a></li>
+              </div>
+            </li>
+            <li ngbDropdown  class="nav-item dropdown">
+              <a ngbDropdownToggle class="nav-link dropdown-toggle active"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Curso
+              </a>
+              <div  ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                <li><a ngbDropdownItem  class="dropdown-item" [routerLink]="['/signin']">Crear</a></li>
+                <li><a ngbDropdownItem class="dropdown-item" [routerLink]="['/mostrar']">Mostrar</a></li>
+                <li><a  ngbDropdownItem class="dropdown-item" href="#">Eliminar</a></li>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link active" (click)="logout()" href="#">Cerrar Sesión</a>
