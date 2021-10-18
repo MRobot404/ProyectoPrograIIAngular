@@ -37,6 +37,20 @@ return this.http.get<any>("http://localhost:3030/profesor/buscar").pipe(
   catchError(e=>"error")
 )
   }
+  eliminar(profesor:any){
+    this.cargar=true; 
+   this.eliminarProfesoresServicio(profesor.idProfesor).subscribe(
+     (response:any) => this.buscarProfesores()
+   )
+    console.log("lol");
+   }
+
+   eliminarProfesoresServicio(id:any):Observable<any>{
+     return this.http.delete<any>("http://localhost:3030/profesor/eliminar/"+id).pipe(
+       catchError(e=>"error")
+     )
+   }
+
 
 }
 export class PaginatorOverviewExample {}

@@ -10,87 +10,172 @@
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link active" [routerLink]="['/home']">Inicio</a>
             </li>
-            <li ngbDropdown  class="nav-item dropdown">
-              <a ngbDropdownToggle class="nav-link dropdown-toggle active"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li ngbDropdown class="nav-item dropdown">
+              <a
+                ngbDropdownToggle
+                class="nav-link dropdown-toggle active"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Profesor
               </a>
-              <div  ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                <li><a ngbDropdownItem  class="dropdown-item" [routerLink]="['/signin']">Crear</a></li>
-                <li><a ngbDropdownItem class="dropdown-item" [routerLink]="['/mostrar']">Mostrar</a></li>
-                <li><a  ngbDropdownItem class="dropdown-item" href="#">Eliminar</a></li>
+              <div
+                ngbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/signin']"
+                    >Crear</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/mostrar']"
+                    >Mostrar</a
+                  >
+                </li>
               </div>
             </li>
-            <li ngbDropdown  class="nav-item dropdown">
-              <a ngbDropdownToggle class="nav-link dropdown-toggle active"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li ngbDropdown class="nav-item dropdown">
+              <a
+                ngbDropdownToggle
+                class="nav-link dropdown-toggle active"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Alumno
               </a>
-              <div  ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                <li><a ngbDropdownItem  class="dropdown-item" [routerLink]="['/signin']">Crear</a></li>
-                <li><a ngbDropdownItem class="dropdown-item" [routerLink]="['/mostrar']">Mostrar</a></li>
-                <li><a  ngbDropdownItem class="dropdown-item" href="#">Eliminar</a></li>
+              <div
+                ngbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/signin']"
+                    >Crear</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/mostrar']"
+                    >Mostrar</a
+                  >
+                </li>
               </div>
             </li>
-            <li ngbDropdown  class="nav-item dropdown">
-              <a ngbDropdownToggle class="nav-link dropdown-toggle active"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li ngbDropdown class="nav-item dropdown">
+              <a
+                ngbDropdownToggle
+                class="nav-link dropdown-toggle active"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Curso
               </a>
-              <div  ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                <li><a ngbDropdownItem  class="dropdown-item" [routerLink]="['/signin']">Crear</a></li>
-                <li><a ngbDropdownItem class="dropdown-item" [routerLink]="['/mostrar']">Mostrar</a></li>
-                <li><a  ngbDropdownItem class="dropdown-item" href="#">Eliminar</a></li>
+              <div
+                ngbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/signin']"
+                    >Crear</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/mostrar']"
+                    >Mostrar</a
+                  >
+                </li>
               </div>
             </li>
-           
-            
           </ul>
         </div>
       </nav>
-     </div>
+    </div>
+      <div class="progress" *ngIf="cargar">
+        <div
+          class="progress-bar progress-bar-striped progress-bar-animated"
+          role="progressbar"
+          aria-valuenow="100"
+          style="width: 100%"
+        ></div>
+      </div>
+
     <div class="row">
       <div class="col-md-12">
         <hr />
         <table class="table">
-            <thead>
-                <tr>
-                    <th>idProfesor</th>
-                    <th>Usuario</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Contraseña</th>
-                    <th>Telefono</th>
-                    <th>Cursos</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let profesor of profesores">
-                <th scope="row">{{profesor.idProfesor}}</th>
-                <th scope="row">{{profesor.usuario}}</th> 
-                <th scope="row">{{profesor.nombre}}</th> 
-                <th scope="row">{{profesor.apellido}}</th> 
-                <th scope="row">{{profesor.contrasena}}</th> 
-                <th scope="row">{{profesor.telefono}}</th> 
-                <th scope="row">
-                  <ul *ngFor="let curso of profesor.cursolist">
-                    <li>Nombre:{{curso.nombre}} </li>
-                    <li>Fecha de inicio:{{curso.fechaDeInicio}} </li>
-                    <li>Fecha de finalización:{{curso.fechaFin}} </li>
-                    <li>Día:{{curso.dia}} </li> 
-                    <li>Hora de inicio:{{curso.horaInicio}} </li>
-                    <li>Hora de finalización:{{curso.horaFin}} </li>
-                    <li>Profesor:{{curso.profesor}} </li>
-                    <li>ID del profesor:{{curso.profesorIdprofesor}} </li>
-                  </ul>
-                </th>
-              </tr>
-            </tbody>
+          <thead>
+            <tr>
+              <th>idProfesor</th>
+              <th>Usuario</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Contraseña</th>
+              <th>Telefono</th>
+              <th>Cursos</th>
+              <th scope="col">Elliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let profesor of profesores">
+              <th scope="row">{{ profesor.idProfesor }}</th>
+              <th scope="row">{{ profesor.usuario }}</th>
+              <th scope="row">{{ profesor.nombre }}</th>
+              <th scope="row">{{ profesor.apellido }}</th>
+              <th scope="row">{{ profesor.contrasena }}</th>
+              <th scope="row">{{ profesor.telefono }}</th>
+              <th scope="row">
+                <ul *ngFor="let curso of profesor.cursolist">
+                  <li>Nombre: {{ curso.nombre }}</li>
+                  <li>Fecha de inicio: {{ curso.fechaDeInicio | date: 'dd/MM/yyyy' }}</li>
+                  <li>Fecha de finalización: {{ curso.fechaFin  | date: 'dd/MM/yyyy'}}</li>
+                  <li>Día: {{ curso.dia }}</li>
+                  <li>Hora de inicio: {{ curso.horaInicio }}</li>
+                  <li>Hora de finalización: {{ curso.horaFin }}</li>
+                  <li>Profesor: {{ curso.profesor }}</li>
+                  <li>ID del profesor: {{ curso.profesorIdprofesor }}</li>
+                </ul>
+              </th>
+              <th scope="row">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="eliminar(profesor)"
+                >
+                  Eliminar
+                </button>
+              </th>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
   </div>
-  <mat-paginator [length]="20"
-              [pageSize]="4"
-            
-              aria-label="Select page">
-</mat-paginator>
-
+  <mat-paginator [length]="20" [pageSize]="4" aria-label="Select page">
+  </mat-paginator>
 </div>

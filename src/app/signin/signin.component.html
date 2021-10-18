@@ -1,115 +1,313 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>Crear profesor</h1>
+      <h1>Mostrar profesores</h1>
     </div>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <div class="container-fluid">
-        <ul class="navbar-nav">
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link active" [routerLink]="['/home']">Home</a>
-          </li>
-         <li class="nav-item"routerLinkActive="active" >
-            <a class="nav-link active" [routerLink]="['/signin']">Crear</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/mostrar']">Mostrar</a>
-          </li>
-          
-        </ul>
-      </div>
-    </nav>
-    <div class="col-md-12">
-      <hr />
+    <div class="content">
+      <!--Inicio de Navbar-->
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/home']">Inicio</a>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+              <a
+                ngbDropdownToggle
+                class="nav-link dropdown-toggle active"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Profesor
+              </a>
+              <div
+                ngbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/signin']"
+                    >Crear</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/mostrar']"
+                    >Mostrar</a
+                  >
+                </li>
+              </div>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+              <a
+                ngbDropdownToggle
+                class="nav-link dropdown-toggle active"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Alumno
+              </a>
+              <div
+                ngbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/signin']"
+                    >Crear</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/mostrar']"
+                    >Mostrar</a
+                  >
+                </li>
+              </div>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+              <a
+                ngbDropdownToggle
+                class="nav-link dropdown-toggle active"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Curso
+              </a>
+              <div
+                ngbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/signin']"
+                    >Crear</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/mostrar']"
+                    >Mostrar</a
+                  >
+                </li>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!--Final de Navbar-->
     </div>
-  </div>
-  
-  <div class="row" *ngIf="loading">
-    <div class="col-md-12">
-      <div class="spinner-border text-info float-right" role="status">
-        <span class="sr-only">Loading ...</span>
-      </div>
+    <br />
+    <br />
+    <!--Inicio de Barra de navegación-->
+    <div class="progress" *ngIf="cargar">
+      <div
+        class="progress-bar progress-bar-striped progress-bar-animated"
+        role="progressbar"
+        aria-valuenow="100"
+        style="width: 100%"
+      ></div>
     </div>
+    <!--Fin Barra de navegación-->
     <br />
     <br />
   </div>
-  <form id="crear">
-    <div class="row">
-      <div class="col-md-12">
-        <input
-          type="text"
-          [(ngModel)]="profesor.usuario"
-          [ngModelOptions]="{ standalone: true }"
-          placeholder="Usuario"
-          class="form-control"
-          required
-        />
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md-12">
-        <input
-          type="text"
-          [(ngModel)]="profesor.nombre"
-          [ngModelOptions]="{ standalone: true }"
-          placeholder="Nombre"
-          class="form-control"
-          required
-        />
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md-12">
-        <input
-          type="text"
-          [(ngModel)]="profesor.apellido"
-          [ngModelOptions]="{ standalone: true }"
-          placeholder="Apellido"
-          class="form-control"
-          required
-        />
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md-12">
-        <input
-          type="text"
-          [(ngModel)]="profesor.contrasena"
-          [ngModelOptions]="{ standalone: true }"
-          placeholder="Contraseña"
-          class="form-control"
-          required
-        />
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md-12">
-        <input
-          type="number"
-          [(ngModel)]="profesor.telefono"
-          [ngModelOptions]="{ standalone: true }"
-          placeholder="Telefono"
-          class="form-control"
-          required
-        />
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md-12">
-        <input
-          class="btn btn-success float-right"
-          type="submit"
-          value="Agregar"
-        />
-      </div>
-    </div>
-  </form>
-  <br />
-  
 </div>
+<div class="container">
+  <div class="progress" *ngIf="cargar">
+    <div
+      class="progress-bar progress-bar-striped progress-bar-animated"
+      role="progressbar"
+      aria-valuenow="100"
+      style="width: 100%"
+    ></div>
+  </div>
+  <!--Inicio de Creación de usuarios-->
+  <div class="row">
+    <div class="col-md-12">
+      <!--Inicio de formulario-->
+      <form (ngSubmit)="guardar()" id="formulario">
+        <div class="form-group">
+          <label>Usuario:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="profesor.usuario"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Nombre:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="profesor.nombre"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Apellido:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="profesor.apellido"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Contraseña:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="profesor.contrasena"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Telefono:</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="profesor.telefono"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-3">
+            <label>Cursos:</label>
+          </div>
+          <div class="col-md-9">
+            <button
+              type="button"
+              class="btn btn-warning"
+              (click)="agregarCurso()"
+            >
+              Agregar curso
+            </button>
+          </div>
+        </div>
+        <div class="row" *ngFor="let curso of profesor.cursolist">
+          <div class="row-md-12">
+          <div class="btn btn-danger" (click)="eliminar(curso)">
+            Eliminar curso
+          </div>
+        </div>
+        <!--Inicio de Lista de cursos-->
+          <div class="form-group">
+            <label>Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="curso.nombre"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Fecha de inicio:</label>
+            <input
+              type="date"
+              class="form-control"
+              [(ngModel)]="curso.fechaDeInicio"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Fecha fin:</label>
+            <input
+              type="date"
+              class="form-control"
+              [(ngModel)]="curso.fechaFin"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Día:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="curso.dia"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Hora inicio:</label>
+            <input
+              type="time"
+              class="form-control"
+              [(ngModel)]="curso.horaInicio"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Hora Fin:</label>
+            <input
+              type="time"
+              class="form-control"
+              [(ngModel)]="curso.horaFin"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Profesor:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="curso.profesor"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Id Profesor:</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="curso.profesorIdprofesor"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <!--Fin de lista de cursos-->
+        </div>
 
+        <br>
+        <input type="submit" class="btn btn-success" value="Guardar">
+      </form>
+      <!--Fin del formulario-->
+      <hr>
+    </div>
+  </div>
+</div>
