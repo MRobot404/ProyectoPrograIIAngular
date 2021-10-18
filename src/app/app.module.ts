@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
+
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,13 +16,21 @@ import { SigninComponent } from './signin/signin.component';
 import { MostrarComponent } from './mostrar/mostrar.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MostrarprofesoresComponent } from './mostrarprofesores/mostrarprofesores.component';
+import { CrearalumnosComponent } from './crearalumnos/crearalumnos.component';
+import { MostrarcursosComponent } from './mostrarcursos/mostrarcursos.component';
+import { CrearcursosComponent } from './crearcursos/crearcursos.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
     SigninComponent,
-    MostrarComponent
+    MostrarComponent,
+    MostrarprofesoresComponent,
+    CrearalumnosComponent,
+    MostrarcursosComponent,
+    CrearcursosComponent
   ],
   imports: [
     BrowserModule,
