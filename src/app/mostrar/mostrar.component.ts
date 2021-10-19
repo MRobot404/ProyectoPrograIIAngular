@@ -42,7 +42,6 @@ return this.http.get<any>("http://localhost:3030/profesor/buscar").pipe(
    this.eliminarProfesoresServicio(profesor.idProfesor).subscribe(
      (response:any) => this.buscarProfesores()
    )
-    console.log("lol");
    }
 
    eliminarProfesoresServicio(id:any):Observable<any>{

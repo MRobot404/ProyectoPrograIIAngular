@@ -1,120 +1,171 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Mostrar cursos</h1>
-          </div>
-        <div class="content">
-            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-              <div class="container-fluid">
-                <ul class="navbar-nav">
-                  <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link active" [routerLink]="['/home']">Inicio</a>
-                  </li>
-                  <li ngbDropdown class="nav-item dropdown">
-                    <a
-                      ngbDropdownToggle
-                      class="nav-link dropdown-toggle active"
-                      id="navbarDropdown"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Profesor
-                    </a>
-                    <div
-                      ngbDropdownMenu
-                      class="dropdown-menu"
-                      aria-labelledby="navbarDropdown"
-                    >
-                      <li>
-                        <a
-                          ngbDropdownItem
-                          class="dropdown-item"
-                          [routerLink]="['/signin']"
-                          >Crear</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          ngbDropdownItem
-                          class="dropdown-item"
-                          [routerLink]="['/mostrar']"
-                          >Mostrar</a
-                        >
-                      </li>
-                    </div>
-                  </li>
-                  <li ngbDropdown class="nav-item dropdown">
-                    <a
-                      ngbDropdownToggle
-                      class="nav-link dropdown-toggle active"
-                      id="navbarDropdown"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Alumno
-                    </a>
-                    <div
-                      ngbDropdownMenu
-                      class="dropdown-menu"
-                      aria-labelledby="navbarDropdown"
-                    >
-                      <li>
-                        <a
-                          ngbDropdownItem
-                          class="dropdown-item"
-                          [routerLink]="['/crearAlumno']"
-                          >Crear</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          ngbDropdownItem
-                          class="dropdown-item"
-                          [routerLink]="['/mostraralumno']"
-                          >Mostrar</a
-                        >
-                      </li>
-                    </div>
-                  </li>
-                  <li ngbDropdown class="nav-item dropdown">
-                    <a
-                      ngbDropdownToggle
-                      class="nav-link dropdown-toggle active"
-                      id="navbarDropdown"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Curso
-                    </a>
-                    <div
-                      ngbDropdownMenu
-                      class="dropdown-menu"
-                      aria-labelledby="navbarDropdown"
-                    >
-                      <li>
-                        <a
-                          ngbDropdownItem
-                          class="dropdown-item"
-                          [routerLink]="['/crearCurso']"
-                          >Crear</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          ngbDropdownItem
-                          class="dropdown-item"
-                          [routerLink]="['/mostrarCurso']"
-                          >Mostrar</a
-                        >
-                      </li>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Mostrar cursos</h1>
     </div>
+    <div class="content">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/home']">Inicio</a>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+              <a
+                ngbDropdownToggle
+                class="nav-link dropdown-toggle active"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Profesor
+              </a>
+              <div
+                ngbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/signin']"
+                    >Crear</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/mostrar']"
+                    >Mostrar</a
+                  >
+                </li>
+              </div>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+              <a
+                ngbDropdownToggle
+                class="nav-link dropdown-toggle active"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Alumno
+              </a>
+              <div
+                ngbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/crearAlumno']"
+                    >Crear</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/mostraralumno']"
+                    >Mostrar</a
+                  >
+                </li>
+              </div>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+              <a
+                ngbDropdownToggle
+                class="nav-link dropdown-toggle active"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Curso
+              </a>
+              <div
+                ngbDropdownMenu
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/crearCurso']"
+                    >Crear</a
+                  >
+                </li>
+                <li>
+                  <a
+                    ngbDropdownItem
+                    class="dropdown-item"
+                    [routerLink]="['/mostrarCurso']"
+                    >Mostrar</a
+                  >
+                </li>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="progress" *ngIf="cargar">
+      <div
+        class="progress-bar progress-bar-striped progress-bar-animated"
+        role="progressbar"
+        aria-valuenow="100"
+        style="width: 100%"
+      ></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr />
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Id del Curso</th>
+              <th>Nombre</th>
+              <th>Fecha de inicio</th>
+              <th>Fecha de finalización</th>
+              <th>Dia</th>
+              <th>Hora de inicio</th>
+              <th>Hora de fin</th>
+              <th>Profesor</th>
+              <th>Id del profesor</th>
+              <th scope="col">Elliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let curso of cursos">
+              <th scope="row">{{ curso.idcurso }}</th>
+              <th scope="row">{{ curso.nombre}}</th>
+              <th scope="row">{{  curso.fechaDeInicio | date: 'dd/MM/yyyy'}}</th>
+              <th scope="row">{{ curso.fechaFin  | date: 'dd/MM/yyyy' }}</th>
+              <th scope="row">{{ curso.dia}}</th>
+              <th scope="row">{{ curso.horaInicio}}</th>
+              <th scope="row">{{ curso.horaFin }}</th>
+              <th scope="row">{{ curso.profesor}}</th>
+              <th scope="row">{{ curso.profesorIdprofesor }}</th>
+              <th scope="row">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="eliminar(curso)"
+                >
+                  Eliminar
+                </button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

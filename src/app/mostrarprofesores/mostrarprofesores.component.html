@@ -1,1 +1,161 @@
-<p>mostrarprofesores works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Mostrar Alumnos</h1>
+      </div>
+      <div class="content">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <div class="container-fluid">
+            <ul class="navbar-nav">
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link active" [routerLink]="['/home']">Inicio</a>
+              </li>
+              <li ngbDropdown class="nav-item dropdown">
+                <a
+                  ngbDropdownToggle
+                  class="nav-link dropdown-toggle active"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Profesor
+                </a>
+                <div
+                  ngbDropdownMenu
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/signin']"
+                      >Crear</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/mostrar']"
+                      >Mostrar</a
+                    >
+                  </li>
+                </div>
+              </li>
+              <li ngbDropdown class="nav-item dropdown">
+                <a
+                  ngbDropdownToggle
+                  class="nav-link dropdown-toggle active"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Alumno
+                </a>
+                <div
+                  ngbDropdownMenu
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/crearAlumno']"
+                      >Crear</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/mostraralumno']"
+                      >Mostrar</a
+                    >
+                  </li>
+                </div>
+              </li>
+              <li ngbDropdown class="nav-item dropdown">
+                <a
+                  ngbDropdownToggle
+                  class="nav-link dropdown-toggle active"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Curso
+                </a>
+                <div
+                  ngbDropdownMenu
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/crearCurso']"
+                      >Crear</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/mostrarCurso']"
+                      >Mostrar</a
+                    >
+                  </li>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="progress" *ngIf="cargar">
+        <div
+          class="progress-bar progress-bar-striped progress-bar-animated"
+          role="progressbar"
+          aria-valuenow="100"
+          style="width: 100%"
+        ></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr />
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Carne</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Contraseña</th>
+                <th scope="col">Elliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let alumno of alumnos">
+                <th scope="row">{{ alumno.carne }}</th>
+                <th scope="row">{{ alumno.nombre}}</th>
+                <th scope="row">{{ alumno.apellido}}</th>
+                <th scope="row">{{ alumno.contrasena }}</th>
+                <th scope="row">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    (click)="eliminar(alumno)"
+                  >
+                    Eliminar
+                  </button>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
