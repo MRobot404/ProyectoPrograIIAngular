@@ -12,6 +12,8 @@ import { ThrowStmt } from '@angular/compiler';
 export class SigninComponent implements OnInit {
   cargar: boolean = false;
   profesor: any = { cursolist: [] };
+  numero: any = 0;
+  contador: boolean=false;
 
   constructor(private http: HttpClient) {}
 

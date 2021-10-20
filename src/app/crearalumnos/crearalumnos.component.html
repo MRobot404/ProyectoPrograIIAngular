@@ -1,1 +1,188 @@
-<p>crearalumnos works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Crear alumno</h1>
+      </div>
+      <div class="content">
+        <!--Inicio de Navbar-->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <div class="container-fluid">
+            <ul class="navbar-nav">
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link active" [routerLink]="['/home']">Inicio</a>
+              </li>
+              <li ngbDropdown class="nav-item dropdown">
+                <a
+                  ngbDropdownToggle
+                  class="nav-link dropdown-toggle active"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Profesor
+                </a>
+                <div
+                  ngbDropdownMenu
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/signin']"
+                      >Crear</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/mostrar']"
+                      >Mostrar</a
+                    >
+                  </li>
+                </div>
+              </li>
+              <li ngbDropdown class="nav-item dropdown">
+                <a
+                  ngbDropdownToggle
+                  class="nav-link dropdown-toggle active"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Alumno
+                </a>
+                <div
+                  ngbDropdownMenu
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/crearAlumno']"
+                      >Crear</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/mostraralumno']"
+                      >Mostrar</a
+                    >
+                  </li>
+                </div>
+              </li>
+              <li ngbDropdown class="nav-item dropdown">
+                <a
+                  ngbDropdownToggle
+                  class="nav-link dropdown-toggle active"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Curso
+                </a>
+                <div
+                  ngbDropdownMenu
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/crearCurso']"
+                      >Crear</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      ngbDropdownItem
+                      class="dropdown-item"
+                      [routerLink]="['/mostrarCurso']"
+                      >Mostrar</a
+                    >
+                  </li>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!--Final de Navbar-->
+      </div>
+      <br />
+      <br />
+      <!--Inicio de Barra de navegación-->
+      <div class="progress" *ngIf="cargar">
+        <div
+          class="progress-bar progress-bar-striped progress-bar-animated"
+          role="progressbar"
+          aria-valuenow="100"
+          style="width: 100%"
+        ></div>
+      </div>
+      <!--Fin Barra de navegación-->
+      <br />
+      <br />
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <form (ngSubmit)="guardar()" id="formulario">
+          <div class="form-group">
+            <label>Carne:</label>
+            <input
+              type="text"
+              maxlength="8"
+              class="form-control"
+              [(ngModel)]="alumno.carne"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="alumno.nombre"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Apellido:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="alumno.apellido"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Contraseña:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="alumno.contrasena"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+            <br>
+          <input type="submit" class="btn btn-success" value="Guardar">
+        </form>
+      </div>
+    </div>
+    <hr>
+  </div>
+  
