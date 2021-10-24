@@ -134,7 +134,7 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Contraseña</th>
-                <th scope="col">Elliminar</th>
+                <th scope="col">Elliminar y Actualizar</th>
               </tr>
             </thead>
             <tbody>
@@ -151,6 +151,12 @@
                   >
                     Eliminar
                   </button>
+                  &nbsp;
+                  <button
+                  type="button"
+                  class="btn btn-warning"
+                  (click)="eliminar(alumno)"
+                >Actualizar</button>
                 </th>
               </tr>
             </tbody>

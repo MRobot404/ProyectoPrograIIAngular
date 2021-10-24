@@ -138,7 +138,7 @@
               <th>Contraseña</th>
               <th>Telefono</th>
               <th>Cursos</th>
-              <th scope="col">Elliminar</th>
+              <th scope="col">Elliminar y Actualizar</th>
             </tr>
           </thead>
           <tbody>
@@ -169,6 +169,14 @@
                 >
                   Eliminar
                 </button>
+                &nbsp;
+                <button
+                type="button"
+                class="btn btn-warning"
+                (click)="eliminar(profesor)"
+              >
+               Actualizar
+              </button>
               </th>
             </tr>
           </tbody>
