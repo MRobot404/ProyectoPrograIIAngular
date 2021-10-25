@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>Bienvenido {{profesor.usuario}}</h1>
+        <h1>Bienvenido Administrad@r {{usuario.nombre}}</h1>
       </div>
       
      <div class="content">
@@ -37,6 +37,9 @@
                 <li><a ngbDropdownItem  class="dropdown-item" [routerLink]="['/crearCurso']">Crear</a></li>
                 <li><a ngbDropdownItem class="dropdown-item" [routerLink]="['/mostrarCurso']">Mostrar</a></li>
               </div>
+            </li>
+            <li class="nav-item">
+              <a Mi class="nav-link active" [routerLink]="['/profile']" >Mi Perfil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" (click)="logout()" href="#">Cerrar Sesión</a>

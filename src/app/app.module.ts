@@ -20,6 +20,7 @@ import { MostrarprofesoresComponent } from './mostrarprofesores/mostrarprofesore
 import { CrearalumnosComponent } from './crearalumnos/crearalumnos.component';
 import { MostrarcursosComponent } from './mostrarcursos/mostrarcursos.component';
 import { CrearcursosComponent } from './crearcursos/crearcursos.component';
+import { MiperfilComponent } from './miperfil/miperfil.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { CrearcursosComponent } from './crearcursos/crearcursos.component';
     MostrarprofesoresComponent,
     CrearalumnosComponent,
     MostrarcursosComponent,
-    CrearcursosComponent
+    CrearcursosComponent,
+    MiperfilComponent
   ],
   imports: [
     BrowserModule,

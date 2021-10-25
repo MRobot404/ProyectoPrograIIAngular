@@ -8,14 +8,18 @@ import { Component, OnInit } from '@angular/core';
   
 })
 export class HomeComponent implements OnInit {
-profesor:any={}
+  usuario: any = {};
+
+  
   constructor() { }
 
   ngOnInit(): void {
-    this.profesor=JSON.stringify(localStorage.getItem("profesor"));
-    if(!this.profesor){
-      location.href="/"
+    this.usuario =JSON.stringify(localStorage.getItem("profesor"));
+    if(!this.usuario){
+      location.href="/";
+
     }
+    
   }
 
   logout(){

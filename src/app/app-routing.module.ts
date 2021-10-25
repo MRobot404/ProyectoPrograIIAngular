@@ -8,6 +8,7 @@ import { MostrarprofesoresComponent } from './mostrarprofesores/mostrarprofesore
 import { CrearalumnosComponent } from './crearalumnos/crearalumnos.component';
 import { MostrarcursosComponent } from './mostrarcursos/mostrarcursos.component';
 import { CrearcursosComponent } from './crearcursos/crearcursos.component';
+import { MiperfilComponent } from './miperfil/miperfil.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'mostraralumno', component:MostrarprofesoresComponent},
   {path:'crearAlumno', component:CrearalumnosComponent},
   {path:'mostrarCurso', component:MostrarcursosComponent},
-  {path:'crearCurso', component:CrearcursosComponent}
+  {path:'crearCurso', component:CrearcursosComponent},
+  {path:'profile',component:MiperfilComponent}
 ];
 
 @NgModule({
