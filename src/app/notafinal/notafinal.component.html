@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Nota Final</h1>
+    </div>
+
+    <div class="content">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/menu']">Inicio</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/consultacurso']"
+                >Consulta Cursos</a
+              >
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/consultaalumno']"
+                >Consuta de alumnos asignados</a
+              >
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/notafinal']"
+                >Ingreso Nota Final</a
+              >
+            </li>
+            <li class="nav-item">
+              <a Mi class="nav-link active" [routerLink]="['/perfilprofe']"
+                >Mi Perfil</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Cursos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let nota of notas">
+          <th scope="row">
+            <ul>
+              <li class="nota">
+                Id de la nota:
+                <input
+                  [(ngModel)]="nota.idnota"
+                  type="text"
+                  clearInput
+                  disabled
+                />
+              </li>
+              <li class="nota">
+                Nota: <input [(ngModel)]="nota.nota" type="number" min="0"  max="100" clearInput />
+              </li>
+              <li class="nota">Nombre del curso: <input
+                [(ngModel)]="nota.nombreCurso"
+                type="text"
+                clearInput
+                disabled
+              /></li>
+              <li class="nota">Id del curso: <input
+                [(ngModel)]="nota.cursoIdcurso"
+                type="number"
+                clearInput
+                disabled
+              /></li>
+              <li class="nota">Id del alumno: <input
+                [(ngModel)]="nota.alumnoIdalumno"
+                type="text"
+                clearInput
+                disabled
+              /></li>
+              <button
+                type="button"
+                class="btn btn-info"
+                (click)="cambiarnota()"
+              >
+                Cambiar nota
+              </button>
+            </ul>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Perfil Profesor</h1>
+    </div>
+
+    <div class="content">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/menu']">Inicio</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/consultacurso']"
+                >Consulta Cursos</a
+              >
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/consultaalumno']"
+                >Consuta de alumnos asignados</a
+              >
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/notafinal']"
+                >Ingreso Nota Final</a
+              >
+            </li>
+            <li class="nav-item">
+              <a Mi class="nav-link active" [routerLink]="['/perfilprofe']"
+                >Mi Perfil</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let profesor">
+          <th scope="row">
+            <ul>
+              <li>Usuario: {{ profesor.usuario }}</li>
+              <li>Nombre: {{ profesor.nombre }}</li>
+              <li>Apellido: {{ profesor.apellido }}</li>
+              <li>Contaseña: {{profesor.contrasena}}</li>
+              <li>Telefono: {{profesor.telefono}}</li>
+            </ul>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

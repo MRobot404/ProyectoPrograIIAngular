@@ -21,6 +21,11 @@ import { CrearalumnosComponent } from './crearalumnos/crearalumnos.component';
 import { MostrarcursosComponent } from './mostrarcursos/mostrarcursos.component';
 import { CrearcursosComponent } from './crearcursos/crearcursos.component';
 import { MiperfilComponent } from './miperfil/miperfil.component';
+import { HomeprofesorComponent } from './homeprofesor/homeprofesor.component';
+import { ConsultacursoprofesorComponent } from './consultacursoprofesor/consultacursoprofesor.component';
+import { ConsultaralumnosComponent } from './consultaralumnos/consultaralumnos.component';
+import { NotafinalComponent } from './notafinal/notafinal.component';
+import { PerfilprofesorComponent } from './perfilprofesor/perfilprofesor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +37,12 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
     CrearalumnosComponent,
     MostrarcursosComponent,
     CrearcursosComponent,
-    MiperfilComponent
+    MiperfilComponent,
+    HomeprofesorComponent,
+    ConsultacursoprofesorComponent,
+    ConsultaralumnosComponent,
+    NotafinalComponent,
+    PerfilprofesorComponent
   ],
   imports: [
     BrowserModule,

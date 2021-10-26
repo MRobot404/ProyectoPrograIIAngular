@@ -9,6 +9,11 @@ import { CrearalumnosComponent } from './crearalumnos/crearalumnos.component';
 import { MostrarcursosComponent } from './mostrarcursos/mostrarcursos.component';
 import { CrearcursosComponent } from './crearcursos/crearcursos.component';
 import { MiperfilComponent } from './miperfil/miperfil.component';
+import { HomeprofesorComponent } from './homeprofesor/homeprofesor.component';
+import { ConsultacursoprofesorComponent } from './consultacursoprofesor/consultacursoprofesor.component';
+import { ConsultaralumnosComponent } from './consultaralumnos/consultaralumnos.component';
+import { NotafinalComponent } from './notafinal/notafinal.component';
+import { PerfilprofesorComponent } from './perfilprofesor/perfilprofesor.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -19,7 +24,12 @@ const routes: Routes = [
   {path:'crearAlumno', component:CrearalumnosComponent},
   {path:'mostrarCurso', component:MostrarcursosComponent},
   {path:'crearCurso', component:CrearcursosComponent},
-  {path:'profile',component:MiperfilComponent}
+  {path:'profile',component:MiperfilComponent},
+  {path:'menu', component:HomeprofesorComponent},
+  {path:'consultacurso',component:ConsultacursoprofesorComponent},
+  {path:'consultaalumno', component:ConsultaralumnosComponent},
+  {path:'notafinal', component:NotafinalComponent},
+  {path:'perfilprofe', component:PerfilprofesorComponent}
 ];
 
 @NgModule({

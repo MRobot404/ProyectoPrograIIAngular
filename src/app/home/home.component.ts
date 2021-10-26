@@ -14,11 +14,6 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.usuario =JSON.stringify(localStorage.getItem("profesor"));
-    if(!this.usuario){
-      location.href="/";
-
-    }
     
   }
 
