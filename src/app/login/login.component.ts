@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 
     if (resultado.length > 0) {
 
-      localStorage.setItem('profesor', JSON.stringify(resultado));
+      localStorage.setItem('profesor', JSON.stringify(resultado[0]));
       location.href = '/menu';
 
     } else if (this.resultado2.includes("ADMIN") && this.resultado3.includes("ADMIN")) {

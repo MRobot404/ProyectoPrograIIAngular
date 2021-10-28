@@ -9,10 +9,15 @@ import {catchError} from 'rxjs/operators';
   styleUrls: ['./consultacursoprofesor.component.css']
 })
 export class ConsultacursoprofesorComponent implements OnInit {
-  profesores:any=[];
+  cursos:any=[];
   cargar:boolean=false;
-  private urlAPI="http://localhost:3030/profesor/buscar/porr";
-  constructor(private http:HttpClient) { }
+  profesor: any = {};
+  private urlAPI="http://localhost:3030/profesor/buscar/porr/";
+  constructor(private http:HttpClient) { 
+    let temporal: any = localStorage.getItem('profesor');
+    console.log(temporal);
+      this.profesor = JSON.parse(temporal);
+  }
 
   ngOnInit(): void {
     this.buscarProfesores();
@@ -28,10 +33,11 @@ export class ConsultacursoprofesorComponent implements OnInit {
    mostrarProfesores(response:any){
     this.cargar=false;
     console.log(response)
-    this.profesores=response;
+    this.cursos=response.cursolist;
+    
   }
   buscarProfesoresServicio():Observable<any>{
-    return this.http.get<any>(this.urlAPI+"/25").pipe(
+    return this.http.get<any>(this.urlAPI+this.profesor.idProfesor).pipe(
       catchError(e=>"error")
     )
       }

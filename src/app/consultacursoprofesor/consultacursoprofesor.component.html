@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>Consulta cursos</h1>
+        <h1>Consulta apps</h1>
       </div>
   
       <div class="content">
@@ -37,9 +37,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let profesor">
+          <tr *ngFor="let curso of cursos">
             <th scope="row">
-              <ul *ngFor="let curso of profesor.cursolist">
+              <ul>
                 <li>Nombre: {{ curso.nombre }}</li>
                 <li>Fecha de inicio: {{ curso.fechaDeInicio | date: 'dd/MM/yyyy' }}</li>
                 <li>Fecha de finalización: {{ curso.fechaFin  | date: 'dd/MM/yyyy'}}</li>

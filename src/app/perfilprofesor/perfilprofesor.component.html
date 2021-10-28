@@ -42,16 +42,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let profesor">
-          <th scope="row">
-            <ul>
-              <li>Usuario: {{ profesor.usuario }}</li>
-              <li>Nombre: {{ profesor.nombre }}</li>
-              <li>Apellido: {{ profesor.apellido }}</li>
-              <li>Contaseña: {{profesor.contrasena}}</li>
-              <li>Telefono: {{profesor.telefono}}</li>
-            </ul>
-          </th>
+        <tr>
+          <th scope="row">{{ profesor.idProfesor }}</th>
+              <th scope="row">{{ profesor.usuario }}</th>
+              <th scope="row">{{ profesor.nombre }}</th>
+              <th scope="row">{{ profesor.apellido }}</th>
+              <th scope="row">{{ profesor.contrasena }}</th>
+              <th scope="row">{{ profesor.telefono }}</th>
         </tr>
       </tbody>
     </table>
