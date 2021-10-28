@@ -15,8 +15,6 @@ export class HomeprofesorComponent implements OnInit {
     let temporal: any = localStorage.getItem('profesor');
     console.log(temporal);
       this.profesor = JSON.parse(temporal);
-
-
    }
 
   ngOnInit(): void {

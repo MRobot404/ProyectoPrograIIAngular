@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import {HttpClient} from '@angular/common/http';
-import {catchError} from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-notafinal',
@@ -9,34 +9,41 @@ import {catchError} from 'rxjs/operators';
   styleUrls: ['./notafinal.component.css']
 })
 export class NotafinalComponent implements OnInit {
-  notas:any=[];
-  cargar:boolean=false;
-  private urlAPI="http://localhost:3030/nota/buscar";
-  constructor(private http:HttpClient) { }
+  notas: any = [];
+  id: any ={};
+  temporal: any;
+   
+  cargar: boolean = false;
+  private urlAPI = "http://localhost:3030/nota/buscar/by/";
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.buscarProfesores();
-  }
-  buscarProfesores(){
-    this.cargar=true; 
-    this.buscarProfesoresServicio().subscribe(
-      (response:any) => this.mostrarProfesores(response)
-     
-    )
-   }
+   this.temporal = localStorage.getItem('id');
+    this.id = JSON.parse(this.temporal);
+    console.log(this.temporal = localStorage.getItem('id'))
 
-   mostrarProfesores(response:any){
-    this.cargar=false;
-    console.log(response)
-    this.notas=response;
   }
-  buscarProfesoresServicio():Observable<any>{
-    return this.http.get<any>(this.urlAPI).pipe(
-      catchError(e=>"error")
+  buscarProfesores() {
+    this.cargar = true;
+    this.buscarProfesoresServicio().subscribe(
+      (response: any) => this.mostrarProfesores(response)
+
     )
-      }
-cambiarnota(){
-  
-}
+  }
+
+  mostrarProfesores(response: any) {
+    this.cargar = false;
+    this.notas = response;
+  }
+  buscarProfesoresServicio(): Observable<any> {
+   
+    return this.http.get<any>(this.urlAPI+localStorage.getItem('id')).pipe(
+      catchError(e => "error")
+    )
+  }
+  cambiarnota() {
+
+  }
 
 }

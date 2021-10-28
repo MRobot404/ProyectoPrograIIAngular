@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
 
 @Component({
@@ -35,7 +35,29 @@ export class PerfilprofesorComponent implements OnInit {
       catchError(e=>"error")
     )
       }
-cambiarnota(){
+
+guardar(){
+  this.servicioGuardar().subscribe(
+    (response:any) => this.resultadoServicio(response)
+  )
   
 }
+resultadoServicio(res:any){
+  this.cargar=false;
+  alert("Contraseña actualizada")
+}
+servicioGuardar() {
+  var httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
+  return this.http
+    .post<any>(
+      'http://localhost:3030/profesor/guardar',
+      this.profesor,httpOptions
+    )
+    .pipe(catchError((e) => 'error'));
+} 
+
 }

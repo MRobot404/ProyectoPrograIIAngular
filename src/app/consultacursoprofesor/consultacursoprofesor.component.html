@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>Consulta apps</h1>
+        <h1>Consulta de cursos</h1>
       </div>
   
       <div class="content">
@@ -40,6 +40,7 @@
           <tr *ngFor="let curso of cursos">
             <th scope="row">
               <ul>
+                <li>{{curso.idcurso}}</li>
                 <li>Nombre: {{ curso.nombre }}</li>
                 <li>Fecha de inicio: {{ curso.fechaDeInicio | date: 'dd/MM/yyyy' }}</li>
                 <li>Fecha de finalización: {{ curso.fechaFin  | date: 'dd/MM/yyyy'}}</li>
@@ -48,8 +49,16 @@
                 <li>Hora de finalización: {{ curso.horaFin }}</li>
                 <li>Profesor: {{ curso.profesor }}</li>
                 <li>ID del profesor: {{ curso.profesorIdprofesor }}</li>
+                <button
+                type="button"
+                class="btn btn-warning"
+                (click)="asignarse(curso)"
+              >
+                Asignar nota
+              </button>
               </ul>
             </th>
+            
           </tr>
         </tbody>
       </table>

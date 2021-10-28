@@ -41,4 +41,9 @@ export class ConsultacursoprofesorComponent implements OnInit {
       catchError(e=>"error")
     )
       }
+
+      asignarse(curso:any):void{
+        localStorage.setItem("id",curso.idcurso);
+        location.href="/notafinal";
+      }
 }
