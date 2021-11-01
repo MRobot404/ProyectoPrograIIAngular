@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>Mostrar profesores</h1>
+      <h1>Editar alumno</h1>
     </div>
     <div class="content">
+      <!--Inicio de Navbar-->
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
           <ul class="navbar-nav">
@@ -115,75 +116,79 @@
           </ul>
         </div>
       </nav>
+      <!--Final de Navbar-->
     </div>
-      <div class="progress" *ngIf="cargar">
-        <div
-          class="progress-bar progress-bar-striped progress-bar-animated"
-          role="progressbar"
-          aria-valuenow="100"
-          style="width: 100%"
-        ></div>
-      </div>
+    <br />
+    <br />
+    <!--Inicio de Barra de navegación-->
+ 
+    <!--Fin Barra de navegación-->
+    <br />
+    <br />
+  </div>
+</div>
+<div class="container">
+  <div class="progress" *ngIf="cargar">
+    <div
+      class="progress-bar progress-bar-striped progress-bar-animated"
+      role="progressbar"
+      aria-valuenow="100"
+      style="width: 100%"
+    ></div>
+  </div>
+  <!--Inicio de Creación de usuarios-->
+  <div class="row">
+    <div class="col-md-12">
+      <!--Inicio de formulario-->
+      <form (ngSubmit)="guardar()" id="formulario">
+        <div class="form-group">
+          <label>Id alumno:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="alumno.idalumno"
+            [ngModelOptions]="{ standalone: true }"
+            readonly
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Carne:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="alumno.carne"
+            [ngModelOptions]="{ standalone: true }"
+            readonly
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Nombre:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="alumno.nombre"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Contraseña:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="alumno.contrasena"
+            [ngModelOptions]="{ standalone: true }"
+            required
+          />
+        </div>
+        <br />
+        <input type="submit" class="btn btn-success" value="Guardar" />
+      </form>
 
-    <div class="row">
-      <div class="col-md-12">
-        <hr />
-        <table class="table">
-          <thead>
-            <tr>
-              <th>idProfesor</th>
-              <th>Usuario</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Contraseña</th>
-              <th>Telefono</th>
-              <th>Cursos</th>
-              <th scope="col">Elliminar y Actualizar</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let profesor of profesores">
-              <th scope="row">{{ profesor.idProfesor }}</th>
-              <th scope="row">{{ profesor.usuario }}</th>
-              <th scope="row">{{ profesor.nombre }}</th>
-              <th scope="row">{{ profesor.apellido }}</th>
-              <th scope="row">{{ profesor.contrasena }}</th>
-              <th scope="row">{{ profesor.telefono }}</th>
-              <th scope="row">
-                <ul *ngFor="let curso of profesor.cursolist">
-                  <li>Nombre: {{ curso.nombre }}</li>
-                  <li>Fecha de inicio: {{ curso.fechaDeInicio | date: 'dd/MM/yyyy' }}</li>
-                  <li>Fecha de finalización: {{ curso.fechaFin  | date: 'dd/MM/yyyy'}}</li>
-                  <li>Día: {{ curso.dia }}</li>
-                  <li>Hora de inicio: {{ curso.horaInicio }}</li>
-                  <li>Hora de finalización: {{ curso.horaFin }}</li>
-                  <li>Profesor: {{ curso.profesor }}</li>
-                  <li>ID del profesor: {{ curso.profesorIdprofesor }}</li>
-                </ul>
-              </th>
-              <th scope="row">
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  (click)="eliminar(profesor)"
-                >
-                  Eliminar
-                </button>
-                &nbsp;
-                <button
-                type="button"
-                class="btn btn-warning"
-                (click)="actualizar(profesor)"
-              >
-               Actualizar
-              </button>
-              </th>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!--Fin del formulario-->
+      <hr />
     </div>
   </div>
-  <mat-paginator [length]="100" [pageSize]="5" aria-label="Select page">
-  </mat-paginator>
 </div>

@@ -27,15 +27,16 @@ export class MostrarComponent implements OnInit {
    )
   }
 
-  mostrarProfesores(response:any){
-    this.cargar=false;
-    this.profesores=response;
-  }
+ 
 
   buscarProfesoresServicio():Observable<any>{
 return this.http.get<any>("http://localhost:3030/profesor/buscar").pipe(
   catchError(e=>"error")
 )
+  }
+  mostrarProfesores(response:any){
+    this.cargar=false;
+    this.profesores=response;
   }
   eliminar(profesor:any){
     this.cargar=true; 
@@ -43,6 +44,16 @@ return this.http.get<any>("http://localhost:3030/profesor/buscar").pipe(
      (response:any) => this.buscarProfesores()
    )
    }
+   actualizar(profesor:any){
+   console.log(profesor);
+   localStorage.setItem("prof",JSON.stringify(profesor));
+   console.log(localStorage.getItem("prof"));
+   location.href="/actualizarprofesor";
+  
+  
+   }
+
+  
 
    eliminarProfesoresServicio(id:any):Observable<any>{
      return this.http.delete<any>("http://localhost:3030/profesor/eliminar/"+id).pipe(

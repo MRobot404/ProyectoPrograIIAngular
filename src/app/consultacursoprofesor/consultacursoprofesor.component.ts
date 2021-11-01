@@ -46,4 +46,8 @@ export class ConsultacursoprofesorComponent implements OnInit {
         localStorage.setItem("id",curso.idcurso);
         location.href="/notafinal";
       }
+
+      veralumnos(curso:any):void{
+        localStorage.setItem("id",curso.idcurso);
+      }
 }

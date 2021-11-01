@@ -14,6 +14,9 @@ import { ConsultacursoprofesorComponent } from './consultacursoprofesor/consulta
 import { ConsultaralumnosComponent } from './consultaralumnos/consultaralumnos.component';
 import { NotafinalComponent } from './notafinal/notafinal.component';
 import { PerfilprofesorComponent } from './perfilprofesor/perfilprofesor.component';
+import { ActualizarProfesorComponent } from './actualizar-profesor/actualizar-profesor.component';
+import { ActualizaralumnoComponent } from './actualizaralumno/actualizaralumno.component';
+import { ActualizarcursoComponent } from './actualizarcurso/actualizarcurso.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -29,7 +32,10 @@ const routes: Routes = [
   {path:'consultacurso',component:ConsultacursoprofesorComponent},
   {path:'consultaalumno', component:ConsultaralumnosComponent},
   {path:'notafinal', component:NotafinalComponent},
-  {path:'perfilprofe', component:PerfilprofesorComponent}
+  {path:'perfilprofe', component:PerfilprofesorComponent},
+  {path:'actualizarprofesor', component:ActualizarProfesorComponent},
+  {path:'actualizaralumno', component:ActualizaralumnoComponent},
+  {path:'actualizarcurso', component:ActualizarcursoComponent}
 ];
 
 @NgModule({

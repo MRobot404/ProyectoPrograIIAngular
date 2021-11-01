@@ -41,6 +41,12 @@ export class MostrarcursosComponent implements OnInit {
     );
   }
 
+  editar(curso: any) {
+   console.log(curso);
+   localStorage.setItem("cursoid",JSON.stringify(curso));
+console.log(localStorage.getItem("cursoid"));
+location.href="/actualizarcurso";
+  }
   eliminarProfesoresServicio(id: any): Observable<any> {
     return this.http
       .delete<any>('http://localhost:3030/curso/eliminar/' + id)

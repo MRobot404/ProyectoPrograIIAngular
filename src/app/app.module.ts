@@ -26,6 +26,9 @@ import { ConsultacursoprofesorComponent } from './consultacursoprofesor/consulta
 import { ConsultaralumnosComponent } from './consultaralumnos/consultaralumnos.component';
 import { NotafinalComponent } from './notafinal/notafinal.component';
 import { PerfilprofesorComponent } from './perfilprofesor/perfilprofesor.component';
+import { ActualizarProfesorComponent } from './actualizar-profesor/actualizar-profesor.component';
+import { ActualizarcursoComponent } from './actualizarcurso/actualizarcurso.component';
+import { ActualizaralumnoComponent } from './actualizaralumno/actualizaralumno.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,10 @@ import { PerfilprofesorComponent } from './perfilprofesor/perfilprofesor.compone
     ConsultacursoprofesorComponent,
     ConsultaralumnosComponent,
     NotafinalComponent,
-    PerfilprofesorComponent
+    PerfilprofesorComponent,
+    ActualizarProfesorComponent,
+    ActualizarcursoComponent,
+    ActualizaralumnoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 
 @Component({
@@ -10,18 +10,21 @@ import { catchError } from 'rxjs/operators';
 })
 export class NotafinalComponent implements OnInit {
   notas: any = [];
-  id: any ={};
-  temporal: any;
+  profesor: any = {};
+
    
   cargar: boolean = false;
   private urlAPI = "http://localhost:3030/nota/buscar/by/";
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    let temporal:any = localStorage.getItem('id');
+    console.log(temporal);
+    this.profesor = JSON.parse(temporal);
+    
+  }
 
   ngOnInit(): void {
     this.buscarProfesores();
-   this.temporal = localStorage.getItem('id');
-    this.id = JSON.parse(this.temporal);
-    console.log(this.temporal = localStorage.getItem('id'))
+  
 
   }
   buscarProfesores() {
@@ -38,12 +41,12 @@ export class NotafinalComponent implements OnInit {
   }
   buscarProfesoresServicio(): Observable<any> {
    
-    return this.http.get<any>(this.urlAPI+localStorage.getItem('id')).pipe(
+    return this.http.get<any>(this.urlAPI+this.profesor).pipe(
       catchError(e => "error")
     )
   }
-  cambiarnota() {
-
-  }
-
+ 
+guardar(){
+  
+}
 }
