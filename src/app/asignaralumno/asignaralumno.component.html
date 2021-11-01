@@ -1,9 +1,10 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>Mostrar Alumnos</h1>
+        <h1>Editar curso</h1>
       </div>
       <div class="content">
+        <!--Inicio de Navbar-->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
           <div class="container-fluid">
             <ul class="navbar-nav">
@@ -115,59 +116,75 @@
             </ul>
           </div>
         </nav>
+        <!--Final de Navbar-->
       </div>
-      <div class="progress" *ngIf="cargar">
-        <div
-          class="progress-bar progress-bar-striped progress-bar-animated"
-          role="progressbar"
-          aria-valuenow="100"
-          style="width: 100%"
-        ></div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <hr />
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Carne</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Contraseña</th>
-                <th scope="col">Elliminar y Actualizar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let alumno of alumnos">
-                <th scope="row">{{ alumno.carne }}</th>
-                <th scope="row">{{ alumno.nombre}}</th>
-                <th scope="row">{{ alumno.apellido}}</th>
-                <th scope="row">{{ alumno.contrasena }}</th>
-                <th scope="row">
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    (click)="eliminar(alumno)"
-                  >
-                    Eliminar
-                  </button>
-                  &nbsp;
-                  <button
-                  type="button"
-                  class="btn btn-warning"
-                  (click)="actualizar(alumno)"
-                >Actualizar</button>
-                &nbsp;
-                  <button
-                  type="button"
-                  class="btn btn-primary"
-                  (click)="asignar(alumno)"
-                >Asignar</button>
-                </th>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <br />
+      <br />
+      <!--Inicio de Barra de navegación-->
+  
+      <!--Fin Barra de navegación-->
+      <br />
+      <br />
+    </div>
+  </div>
+  <div class="container">
+    <div class="progress" *ngIf="cargar">
+      <div
+        class="progress-bar progress-bar-striped progress-bar-animated"
+        role="progressbar"
+        aria-valuenow="100"
+        style="width: 100%"
+      ></div>
+    </div>
+    <!--Inicio de Creación de usuarios-->
+    <div class="row">
+      <div class="col-md-12">
+        <!--Inicio de formulario-->
+        <form (ngSubmit)="guardar()" id="formulario">
+          <div class="form-group">
+            <label>Id alumno:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="nota.alumnoIdalumno"
+              [ngModelOptions]="{ standalone: true }"
+              readonly
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Id curso:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="nota.cursoIdcurso"
+              [ngModelOptions]="{ standalone: true }"
+              readonly
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Nombre del curso:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="nota.nombreCurso"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+       
+         
+         
+           
+         
+          <br />
+          <input type="submit" class="btn btn-success" value="Guardar" />
+        </form>
+  
+        <!--Fin del formulario-->
+        <hr />
       </div>
     </div>
   </div>
+  

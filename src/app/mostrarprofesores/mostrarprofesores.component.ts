@@ -44,8 +44,13 @@ export class MostrarprofesoresComponent implements OnInit {
     localStorage.setItem("alumno",JSON.stringify(alumno));
     console.log(localStorage.getItem("alumno"));
     location.href="/actualizaralumno";
-   
-   
+    }
+
+    asignar(alumno:any){
+      console.log(alumno.idalumno);
+      localStorage.setItem("idalumno",JSON.stringify(alumno.idalumno));
+      console.log(localStorage.getItem("idalumno"));
+      location.href="/asignarcurso";
     }
 
   eliminarProfesoresServicio(id: any): Observable<any> {

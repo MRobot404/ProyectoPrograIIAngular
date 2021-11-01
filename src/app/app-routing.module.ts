@@ -17,6 +17,8 @@ import { PerfilprofesorComponent } from './perfilprofesor/perfilprofesor.compone
 import { ActualizarProfesorComponent } from './actualizar-profesor/actualizar-profesor.component';
 import { ActualizaralumnoComponent } from './actualizaralumno/actualizaralumno.component';
 import { ActualizarcursoComponent } from './actualizarcurso/actualizarcurso.component';
+import { AsignaralumnoComponent } from './asignaralumno/asignaralumno.component';
+import { AsignarcursoAalumnoComponent } from './asignarcurso-aalumno/asignarcurso-aalumno.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -35,7 +37,9 @@ const routes: Routes = [
   {path:'perfilprofe', component:PerfilprofesorComponent},
   {path:'actualizarprofesor', component:ActualizarProfesorComponent},
   {path:'actualizaralumno', component:ActualizaralumnoComponent},
-  {path:'actualizarcurso', component:ActualizarcursoComponent}
+  {path:'actualizarcurso', component:ActualizarcursoComponent},
+  {path:'asignarcursoalumno', component:AsignaralumnoComponent},
+  {path:'asignarcurso', component:AsignarcursoAalumnoComponent}
 ];
 
 @NgModule({

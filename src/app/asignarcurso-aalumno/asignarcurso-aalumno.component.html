@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>Mostrar Alumnos</h1>
+        <h1>Cursos para asignarse</h1>
       </div>
       <div class="content">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -130,39 +130,39 @@
           <table class="table">
             <thead>
               <tr>
-                <th>Carne</th>
+                <th>Id del Curso</th>
                 <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Contraseña</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de finalización</th>
+                <th>Dia</th>
+                <th>Hora de inicio</th>
+                <th>Hora de fin</th>
+                <th>Profesor</th>
+                <th>Id del profesor</th>
                 <th scope="col">Elliminar y Actualizar</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let alumno of alumnos">
-                <th scope="row">{{ alumno.carne }}</th>
-                <th scope="row">{{ alumno.nombre}}</th>
-                <th scope="row">{{ alumno.apellido}}</th>
-                <th scope="row">{{ alumno.contrasena }}</th>
+              <tr *ngFor="let curso of cursos">
+                <th scope="row">{{ curso.idcurso }}</th>
+                <th scope="row">{{ curso.nombre }}</th>
+                <th scope="row">
+                  {{ curso.fechaDeInicio | date: "dd/MM/yyyy" }}
+                </th>
+                <th scope="row">{{ curso.fechaFin | date: "dd/MM/yyyy" }}</th>
+                <th scope="row">{{ curso.dia }}</th>
+                <th scope="row">{{ curso.horaInicio }}</th>
+                <th scope="row">{{ curso.horaFin }}</th>
+                <th scope="row">{{ curso.profesor }}</th>
+                <th scope="row">{{ curso.profesorIdprofesor }}</th>
                 <th scope="row">
                   <button
                     type="button"
-                    class="btn btn-danger"
-                    (click)="eliminar(alumno)"
+                    class="btn btn-success"
+                    (click)="asignar(curso)"
                   >
-                    Eliminar
+                    Asignar alumno
                   </button>
-                  &nbsp;
-                  <button
-                  type="button"
-                  class="btn btn-warning"
-                  (click)="actualizar(alumno)"
-                >Actualizar</button>
-                &nbsp;
-                  <button
-                  type="button"
-                  class="btn btn-primary"
-                  (click)="asignar(alumno)"
-                >Asignar</button>
                 </th>
               </tr>
             </tbody>
@@ -171,3 +171,4 @@
       </div>
     </div>
   </div>
+  

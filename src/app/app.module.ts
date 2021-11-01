@@ -29,6 +29,8 @@ import { PerfilprofesorComponent } from './perfilprofesor/perfilprofesor.compone
 import { ActualizarProfesorComponent } from './actualizar-profesor/actualizar-profesor.component';
 import { ActualizarcursoComponent } from './actualizarcurso/actualizarcurso.component';
 import { ActualizaralumnoComponent } from './actualizaralumno/actualizaralumno.component';
+import { AsignaralumnoComponent } from './asignaralumno/asignaralumno.component';
+import { AsignarcursoAalumnoComponent } from './asignarcurso-aalumno/asignarcurso-aalumno.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,9 @@ import { ActualizaralumnoComponent } from './actualizaralumno/actualizaralumno.c
     PerfilprofesorComponent,
     ActualizarProfesorComponent,
     ActualizarcursoComponent,
-    ActualizaralumnoComponent
+    ActualizaralumnoComponent,
+    AsignaralumnoComponent,
+    AsignarcursoAalumnoComponent
   ],
   imports: [
     BrowserModule,
