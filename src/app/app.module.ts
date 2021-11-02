@@ -31,6 +31,9 @@ import { ActualizarcursoComponent } from './actualizarcurso/actualizarcurso.comp
 import { ActualizaralumnoComponent } from './actualizaralumno/actualizaralumno.component';
 import { AsignaralumnoComponent } from './asignaralumno/asignaralumno.component';
 import { AsignarcursoAalumnoComponent } from './asignarcurso-aalumno/asignarcurso-aalumno.component';
+import { NotaprofesorComponent } from './notaprofesor/notaprofesor.component';
+import { ConsultaralumnosverComponent } from './consultaralumnosver/consultaralumnosver.component';
+import { ConsultaralumnosdetalleComponent } from './consultaralumnosdetalle/consultaralumnosdetalle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +55,10 @@ import { AsignarcursoAalumnoComponent } from './asignarcurso-aalumno/asignarcurs
     ActualizarcursoComponent,
     ActualizaralumnoComponent,
     AsignaralumnoComponent,
-    AsignarcursoAalumnoComponent
+    AsignarcursoAalumnoComponent,
+    NotaprofesorComponent,
+    ConsultaralumnosverComponent,
+    ConsultaralumnosdetalleComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,9 @@ import { ActualizaralumnoComponent } from './actualizaralumno/actualizaralumno.c
 import { ActualizarcursoComponent } from './actualizarcurso/actualizarcurso.component';
 import { AsignaralumnoComponent } from './asignaralumno/asignaralumno.component';
 import { AsignarcursoAalumnoComponent } from './asignarcurso-aalumno/asignarcurso-aalumno.component';
+import { NotaprofesorComponent } from './notaprofesor/notaprofesor.component';
+import { ConsultaralumnosverComponent } from './consultaralumnosver/consultaralumnosver.component';
+import { ConsultaralumnosdetalleComponent } from './consultaralumnosdetalle/consultaralumnosdetalle.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -39,7 +42,10 @@ const routes: Routes = [
   {path:'actualizaralumno', component:ActualizaralumnoComponent},
   {path:'actualizarcurso', component:ActualizarcursoComponent},
   {path:'asignarcursoalumno', component:AsignaralumnoComponent},
-  {path:'asignarcurso', component:AsignarcursoAalumnoComponent}
+  {path:'asignarcurso', component:AsignarcursoAalumnoComponent},
+  {path:'notaprofesor', component:NotaprofesorComponent},
+  {path:'consultaalumnover', component:ConsultaralumnosverComponent},
+  {path:'consultaalumnodetalle', component:ConsultaralumnosdetalleComponent}
 ];
 
 @NgModule({

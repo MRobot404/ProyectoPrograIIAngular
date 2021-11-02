@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Agregar nota</h1>
+    </div>
+
+    <div class="content">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/menu']">Inicio</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/consultacurso']"
+                >Consulta Cursos</a
+              >
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/consultaalumno']"
+                >Consuta de alumnos asignados</a
+              >
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link active" [routerLink]="['/notafinal']"
+                >Ingreso Nota Final</a
+              >
+            </li>
+            <li class="nav-item">
+              <a Mi class="nav-link active" [routerLink]="['/perfilprofe']"
+                >Mi Perfil</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <form (ngSubmit)="guardar()" id="formulario">
+          <div class="form-group">
+            <label>Id nota:</label>
+            <input
+              type="text"
+              maxlength="8"
+              class="form-control"
+              [(ngModel)]="nota.idnota"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Nota:</label>
+            <input
+              class="form-control"
+              [(ngModel)]="nota.nota"
+              type="number"
+              min="0"
+              max="100"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="nota.nombreCurso"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Id del curso:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="nota.cursoIdcurso"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Id del alumno:</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="nota.alumnoIdalumno"
+              [ngModelOptions]="{ standalone: true }"
+              required
+            />
+          </div>
+          <br />
+          <input type="submit" class="btn btn-success" value="Guardar" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

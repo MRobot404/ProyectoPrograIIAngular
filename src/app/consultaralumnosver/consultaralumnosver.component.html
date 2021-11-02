@@ -38,31 +38,13 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Cursos</th>
+          <th>Alumnos</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let nota of notas">
           <th scope="row">
             <ul>
-              <li class="nota">
-                Id de la nota:
-                <input
-                  [(ngModel)]="nota.idnota"
-                  type="text"
-                  clearInput
-                  readonly
-                />
-              </li>
-              <li class="nota">
-                Nota: <input [(ngModel)]="nota.nota" type="number" min="0"  max="100" readonly clearInput />
-              </li>
-              <li class="nota">Nombre del curso: <input
-                [(ngModel)]="nota.nombreCurso"
-                type="text"
-                clearInput
-                readonly
-              /></li>
               <li class="nota">Id del curso: <input
                 [(ngModel)]="nota.cursoIdcurso"
                 type="number"
@@ -80,7 +62,7 @@
                 class="btn btn-info"
                 (click)="guardar(nota)"
               >
-                Cambiar nota
+               Ver información
               </button>
             </ul>
           </th>

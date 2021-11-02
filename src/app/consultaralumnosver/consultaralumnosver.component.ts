@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-
+import {HttpClient} from '@angular/common/http';
+import {catchError} from 'rxjs/operators';
 @Component({
-  selector: 'app-notafinal',
-  templateUrl: './notafinal.component.html',
-  styleUrls: ['./notafinal.component.css']
+  selector: 'app-consultaralumnosver',
+  templateUrl: './consultaralumnosver.component.html',
+  styleUrls: ['./consultaralumnosver.component.css']
 })
-export class NotafinalComponent implements OnInit {
+export class ConsultaralumnosverComponent implements OnInit {
   notas: any = [];
   profesor: any = {};
 
@@ -16,7 +15,7 @@ export class NotafinalComponent implements OnInit {
   cargar: boolean = false;
   private urlAPI = "http://localhost:3030/nota/buscar/by/";
   constructor(private http: HttpClient) { 
-    let temporal:any = localStorage.getItem('id');
+    let temporal:any = localStorage.getItem('curs');
     console.log(temporal);
     this.profesor = JSON.parse(temporal);
     
@@ -47,8 +46,10 @@ export class NotafinalComponent implements OnInit {
   }
  
 guardar(nota:any){
-localStorage.setItem("notatemporal",JSON.stringify(nota));
-console.log(localStorage.getItem("notatemporal"));
-location.href="/notaprofesor"
+localStorage.setItem("idalumnotemporal",JSON.stringify(nota.alumnoIdalumno));
+console.log(localStorage.getItem("idalumnotemporal"));
+location.href="/consultaalumnodetalle";
+
   }
+
 }

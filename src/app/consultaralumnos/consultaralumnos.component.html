@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>Consulta Alumno</h1>
+      <h1>Consulta de alumnos asignados</h1>
     </div>
 
     <div class="content">
@@ -12,20 +12,14 @@
               <a class="nav-link active" [routerLink]="['/menu']">Inicio</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link active" [routerLink]="['/consultacurso']"
-                >Consulta Cursos</a
-              >
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link active" [routerLink]="['/consultaalumno']"
-                >Consuta de alumnos asignados</a
-              >
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link active" [routerLink]="['/notafinal']"
-                >Ingreso Nota Final</a
-              >
-            </li>
+                <a class="nav-link active" [routerLink]="['/consultacurso']">Consulta Cursos</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link active" [routerLink]="['/consultaalumno']">Consuta de alumnos asignados</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link active" [routerLink]="['/notafinal']">Ingreso Nota Final</a>
+              </li>
             <li class="nav-item">
               <a Mi class="nav-link active" [routerLink]="['/perfilprofe']"
                 >Mi Perfil</a
@@ -35,5 +29,39 @@
         </div>
       </nav>
     </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Cursos</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let curso of cursos">
+          <th scope="row">
+            <ul>
+              <li>{{curso.idcurso}}</li>
+              <li>Nombre: {{ curso.nombre }}</li>
+              <li>Fecha de inicio: {{ curso.fechaDeInicio | date: 'dd/MM/yyyy' }}</li>
+              <li>Fecha de finalización: {{ curso.fechaFin  | date: 'dd/MM/yyyy'}}</li>
+              <li>Día: {{ curso.dia }}</li>
+              <li>Hora de inicio: {{ curso.horaInicio }}</li>
+              <li>Hora de finalización: {{ curso.horaFin }}</li>
+              <li>Profesor: {{ curso.profesor }}</li>
+              <li>ID del profesor: {{ curso.profesorIdprofesor }}</li>
+              <button
+                type="button"
+                class="btn btn-info"
+                (click)="asignarse(curso)"
+              >
+               Ver alumnos
+              </button>
+           
+            </ul>
+          </th>
+          
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

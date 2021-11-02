@@ -5,20 +5,20 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { ThrowStmt } from '@angular/compiler';
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css'],
+  selector: 'app-notaprofesor',
+  templateUrl: './notaprofesor.component.html',
+  styleUrls: ['./notaprofesor.component.css']
 })
-export class SigninComponent implements OnInit {
+export class NotaprofesorComponent implements OnInit {
   cargar: boolean = false;
-  profesor: any = { cursolist: [] };
-  numero: any = 0;
-  contador: boolean=false;
+  nota: any = {};
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    let id: any=localStorage.getItem("notatemporal");
+    this.nota=JSON.parse(id);
+    console.log(localStorage.getItem("notatemporal"))
+  }
   guardar() {
     let formulario: any = document.getElementById('formulario');
     if (formulario.reportValidity()) {
@@ -27,12 +27,13 @@ export class SigninComponent implements OnInit {
         (response:any) => this.resultadoServicio(response)
       )
     }
+   
   }
-
   resultadoServicio(res:any){
     this.cargar=false;
-    this.profesor= {cursolist:[]};
-    alert("Profesor Guardado con el Id"+res.idProfesor)
+    this.nota= {};
+    alert("Alumno guardado con el Id "+res.idnota)
+    location.href="/notafinal"
   }
   servicioGuardar() {
     var httpOptions = {
@@ -42,22 +43,10 @@ export class SigninComponent implements OnInit {
     };
     return this.http
       .post<any>(
-        'http://localhost:3030/profesor/guardar',
-        this.profesor,httpOptions
+        'http://localhost:3030/nota/guardar',
+        this.nota,httpOptions
       )
       .pipe(catchError((e) => 'error'));
-  }
+  } 
 
-  agregarCurso(numero:any) {
-    this.profesor.cursolist.push({});
-    this.numero++;
-    console.log(this.numero);
-    if(this.numero>2){
-     ( <HTMLInputElement>document.getElementById("btn")).disabled=true;
-    }
-  }
-
-  eliminar(curso: any) {
-    this.profesor.cursolist.splice(this.profesor.cursolist.indexOf(curso), 1);
-  }
 }

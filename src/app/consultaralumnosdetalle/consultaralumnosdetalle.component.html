@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>Nota Final</h1>
+      <h1>Detalle alumno</h1>
     </div>
 
     <div class="content">
@@ -38,54 +38,37 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Cursos</th>
+          <th>Id</th>
+          <th>Carné</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let nota of notas">
+        <tr *ngFor="let alumno of alumnos">
           <th scope="row">
-            <ul>
-              <li class="nota">
-                Id de la nota:
-                <input
-                  [(ngModel)]="nota.idnota"
-                  type="text"
-                  clearInput
-                  readonly
-                />
-              </li>
-              <li class="nota">
-                Nota: <input [(ngModel)]="nota.nota" type="number" min="0"  max="100" readonly clearInput />
-              </li>
-              <li class="nota">Nombre del curso: <input
-                [(ngModel)]="nota.nombreCurso"
-                type="text"
-                clearInput
-                readonly
-              /></li>
-              <li class="nota">Id del curso: <input
-                [(ngModel)]="nota.cursoIdcurso"
-                type="number"
-                clearInput
-                readonly
-              /></li>
-              <li class="nota">Id del alumno: <input
-                [(ngModel)]="nota.alumnoIdalumno"
-                type="text"
-                clearInput
-                readonly
-              /></li>
-              <button
-                type="button"
-                class="btn btn-info"
-                (click)="guardar(nota)"
-              >
-                Cambiar nota
-              </button>
-            </ul>
+            {{ alumno.idalumno }}
+          </th>
+          <th scope="row">
+            {{ alumno.carne}}
+          </th>
+          <th scope="row">
+            {{ alumno.nombre}}
+          </th>
+          <th scope="row">
+            {{ alumno.apellido}}
           </th>
         </tr>
       </tbody>
     </table>
+    <div class="d-grid gap-2 d-md-block">
+    <button
+                type="button"
+                class="btn btn-outline-secondary"
+                (click)="regresar()"
+              >
+              Regresar  
+              </button>
+            </div>
   </div>
 </div>
